@@ -28,7 +28,7 @@ function read(restaurant_id) {
 }
 
 function readHighestRating() {
-  // your solution here
+  return knex("restaurants").max("rating").first();
 }
 
 function update(updatedRestaurant) {
