@@ -5,7 +5,8 @@ function averageRating() {
 }
 
 function count() {
-  // your solution here
+  //knex returns .select will return an array, and .first will give us the first thing in that array
+  return knex("restaurants").select("*").count("restaurant_id").first();
 }
 
 function create(newRestaurant) {
