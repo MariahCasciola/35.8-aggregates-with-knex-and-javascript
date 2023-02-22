@@ -1,12 +1,12 @@
 const knex = require("../db/connection");
 
 function averageRating() {
-  // your solution here
+  return knex("restaurants").avg("rating").first();
 }
 
 function count() {
   //knex returns .select will return an array, and .first will give us the first thing in that array
-  return knex("restaurants").select("*").count("restaurant_id").first();
+  return knex("restaurants").count("restaurant_id").first();
 }
 
 function create(newRestaurant) {
